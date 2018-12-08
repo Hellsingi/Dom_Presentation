@@ -48,7 +48,7 @@
 					<section>
 							<h3>DOM representation</h3>
 						<div style=" display:-webkit-box">															
-						<pre style="width: 45%; margin: 0; font-size: 0.5em" class=" text-left"><code class="html" style=" max-height: 600px;">
+						<pre style="width: 45%; margin: 0; font-size: 0.5em" class=" text-left"><code class="html" style=" >
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -141,24 +141,24 @@ My Link&lt;/a&gt;
 								The Node.appendChild() method adds a node to the end of the list of children of a specified parent node.
 						</p>
 						<pre class="fragment visible" data-fragment-index="3"><code class="javascript">let p = document.createElement("p");
-								document.body.appendChild(p);</code></pre>
+document.body.appendChild(p);</code></pre>
 					</section>
 					<section> 
 						<pre ><code class=" text-center title"> node.hasChildNodes();</code></pre>
 						<p>
 								The Node.hasChildNodes() method returns a Boolean value indicating whether the current Node has child nodes or not.
 						</p>
-						<pre><code class="javascript">	let foo = document.getElementById("foo");
-								if (foo.hasChildNodes()) { 
-									foo.removeChild( foo.childNodes[0] );
-								}</code></pre>		
+						<pre><code class="javascript">let foo = document.getElementById("foo");
+if (foo.hasChildNodes()) { 
+	foo.removeChild( foo.childNodes[0] );
+}</code></pre>		
 					</section>
 					<section> 
 							<pre ><code class=" text-center title">let dupNode = node.cloneNode([deep]);</code></pre>
 							<p>
 									The Node.cloneNode() method returns a duplicate of the node on which this method was called.							</p>
-							<pre><code class="javascript">	let p = document.getElementById("para1");
-									let p_prime = p.cloneNode(true);</code></pre>		
+							<pre><code class="javascript">let p = document.getElementById("para1");
+let p_prime = p.cloneNode(true);</code></pre>		
 					</section>
 				</section>
 				<section>
@@ -181,16 +181,16 @@ My Link&lt;/a&gt;
 								The Node.childNodes read-only property returns a live NodeList of child nodes of the given element where the first child node is assigned index 0.
 						</p>
 						<pre class="fragment visible" data-fragment-index="3"><code class="javascript" >while (box.firstChild) {
-								box.removeChild(box.firstChild); 
-							}</code></pre>
+	box.removeChild(box.firstChild); 
+}</code></pre>
 					</section>
 					<section> 
 							<pre ><code class=" text-center title">let type = node.nodeType;</code></pre>
 							<p>
 								Returns an unsigned short representing the type of the node. 
 							<pre><code class="javascript">let node = document.documentElement.firstChild;
-									if (node.nodeType != Node.COMMENT_NODE)
-									console.log("You should comment your code well!");</code></pre>		
+if (node.nodeType != Node.COMMENT_NODE)
+console.log("You should comment your code well!");</code></pre>		
 					</section>
 					<section> 
 							<pre ><code class=" text-center title">previousNode = node.previousSibling;</code></pre>
@@ -199,10 +199,10 @@ My Link&lt;/a&gt;
 									in its parent's childNodes list, or null if the specified node is the first in that list. 
 							</p>
 							<pre><code class="xml"><img id="b0">
-								<img id="b1">
-								<img id="b2">
-								console.log(document.getElementById("b1").previousSibling);
-								console.log(document.getElementById("b2").previousSibling.id);</code></pre>		
+<img id="b1">
+<img id="b2">
+console.log(document.getElementById("b1").previousSibling);
+console.log(document.getElementById("b2").previousSibling.id);</code></pre>		
 					</section>
 				</section>
 				<section>
@@ -228,18 +228,18 @@ My Link&lt;/a&gt;
 						</section>
 					<section>
 							<h3 >Some examples of properties</h3>
-								<pre class="fragment visible" data-fragment-index="1"><code class="javascript">	let objRef = document.body; 
-										document.body = objRef;</code></pre>
+								<pre class="fragment visible" data-fragment-index="1"><code class="javascript">let objRef = document.body; 
+document.body = objRef;</code></pre>
 							<p class="fragment visible" data-fragment-index="2" style="font-size: 0.8em">
 									The Document.body property represents the  &lt;body&gt; or &lt;frameset&gt; 
 									node of the current document, or null if no such element exists.							
 							</p> 
-							<pre class="fragment visible" data-fragment-index="3"><code class="javascript">	// in HTML: &lt;body id="oldBodyElement"&gt;&lt;/body&gt;
-									alert(document.body.id); // "oldBodyElement"	
-									let aNewBodyElement = document.createElement("body");
-									aNewBodyElement.id = "newBodyElement";
-									document.body = aNewBodyElement;
-									alert(document.body.id); // "newBodyElement"</code></pre>
+							<pre class="fragment visible" data-fragment-index="3"><code class="javascript">// in HTML: &lt;body id="oldBodyElement"&gt;&lt;/body&gt;
+alert(document.body.id); // "oldBodyElement"	
+let aNewBodyElement = document.createElement("body");
+aNewBodyElement.id = "newBodyElement";
+document.body = aNewBodyElement;
+alert(document.body.id); // "newBodyElement"</code></pre>
 					</section>
 					<section> 
 							<pre ><code class=" text-center title">let fontFaceSet = document.fonts;</code></pre>
@@ -247,10 +247,10 @@ My Link&lt;/a&gt;
 							The fonts property of the Document interface returns the FontFaceSet interface of the document.
 							</p>
 
-							<pre><code class="javascript">	document.fonts.ready.then(function() {
-									// Any operation that needs to be done only after all the fonts
-									// have finished loading can go here.
-									});</code></pre>		
+							<pre><code class="javascript">document.fonts.ready.then(function() {
+	// Any operation that needs to be done only after all the fonts
+	// have finished loading can go here.
+});</code></pre>		
 					</section>
 					<section> 
 							<pre ><code class=" text-center title">let objRef = document.head;</code></pre>
@@ -258,14 +258,14 @@ My Link&lt;/a&gt;
 							The head read-only property of the Document interface returns the <head> element of the current document.
 							</p>
 							<pre  style="font-size: 0.5em"><code class="javascript" style="max-height:434px">&lt;!doctype html&gt;
-									&lt;head id="my-document-head"&gt;
-									&lt;title>Example: using document.head &lt;/title&gt;
-									&lt;/head&gt;
-									&lt;script&gt;
-									var theHead = document.head;
-									console.log(theHead.id); // "my-document-head";
-									console.log(theHead === document.querySelector("head")); // true
-									&lt;/script&gt;</code></pre>		
+&lt;head id="my-document-head"&gt;
+&lt;title>Example: using document.head &lt;/title&gt;
+&lt;/head&gt;
+&lt;script&gt;
+var theHead = document.head;
+console.log(theHead.id); // "my-document-head";
+console.log(theHead === document.querySelector("head")); // true
+&lt;/script&gt;</code></pre>		
 					</section>
 				</section>
 				<section>
@@ -287,8 +287,8 @@ My Link&lt;/a&gt;
 								In an HTML document, the document.createElement() method creates the HTML element specified by tagName, or an HTMLUnknownElement if tagName isn't recognized.
 							</p> 
 							<pre class="fragment visible" data-fragment-index="3"><code class="javascript">function addElement() {
-									let newDiv = document.createElement("div");
-								}</code></pre>
+	let newDiv = document.createElement("div");
+}</code></pre>
 					</section>
 					<section> 
 							<pre ><code class=" text-center title">let event = document.createEvent(type);</code></pre>
@@ -296,10 +296,10 @@ My Link&lt;/a&gt;
 								Creates an event of the type specified.
 								The returned object should be first initialized and can then be passed to element.dispatchEvent.
 							</p>
-							<pre ><code class="javascript">	// Create the event.
-									let event = document.createEvent('Event');
-									// Define that the event name is 'build'.
-									event.initEvent('build', true, true);</code></pre>		
+							<pre ><code class="javascript">// Create the event.
+let event = document.createEvent('Event');
+// Define that the event name is 'build'.
+event.initEvent('build', true, true);</code></pre>		
 					</section>
 					<section class="present" style="top: -66.5px; display: block;">
 							<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">more about Document</a></p>
