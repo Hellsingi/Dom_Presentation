@@ -546,17 +546,7 @@ body {
   padding-bottom: 0;
   pointer-events: none; }
 
-.reveal .slides > section.present,
-.reveal .slides > section > section.present {
-  display: block;
-  z-index: 11;
-  opacity: 1; }
 
-.reveal .slides > section:empty,
-.reveal .slides > section > section:empty,
-.reveal .slides > section[data-background-interactive],
-.reveal .slides > section > section[data-background-interactive] {
-  pointer-events: none; }
 
 .reveal.center,
 .reveal.center .slides,
